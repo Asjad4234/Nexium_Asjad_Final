@@ -17,7 +17,7 @@ const Home = () => {
     const lastRecipeRef = useRef<HTMLDivElement | null>(null);
 
     const isSearching = searchVal.trim() !== "";
-    const endpoint = isSearching ? "/api/search-recipes" : "/api/get-recipes";
+    const endpoint = isSearching ? "/api/search-recipes" : "/api/get-recipes-public";
 
     const {
         data: latestRecipes,

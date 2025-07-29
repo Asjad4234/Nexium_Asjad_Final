@@ -6,7 +6,7 @@ import Recipe from '../../../src/models/recipe';
 import { mockRequestResponse } from '../../apiMocks';
 import { stubRecipeBatch, getServerSessionStub } from '../../stub';
 import * as nextAuth from 'next-auth';
-import * as openai from '../../../src/lib/openai';
+import * as gemini from '../../../src/lib/gemini';
 
 // mock authOptions 
 jest.mock("../../../src/pages/api/auth/[...nextauth]", () => ({
@@ -26,7 +26,7 @@ jest.mock('../../../src/lib/mongodb', () => ({
 }))
 
 //open ai validation
-jest.mock('../../../src/lib/openai', () => ({
+jest.mock('../../../src/lib/gemini', () => ({
     generateImages: jest.fn(),
     generateRecipeTags: () => Promise.resolve()
 }))

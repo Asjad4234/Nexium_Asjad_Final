@@ -44,7 +44,7 @@
         "likedBy": [
             {
                 "_id": "668550b989b50bfdbcc56198",
-                "name": "Dereje Getahun",
+                "name": "Test User",
                 "image": "https://lh3.googleusercontent.com/a/ACg8ocLpXxo_jA6JpSTa9zyrvTVAxmZo-abqYf0gNKXqSQfnAdaXaA=s96-c"
             }
         ],
@@ -105,7 +105,7 @@
         "_id": "675d877809a6c39e11f14342",
         "owner": {
             "_id": "6687d83725254486590fec59",
-            "name": "Dereje Getahun",
+            "name": "Test User",
             "image": "https://lh3.googleusercontent.com/a/ACg8ocJUrbjt2uN55OQ0F2NPaq9B4e2fayppfRfUQeLG1f8fLHrYjsE2=s96-c"
         },
         "name": "Mango Avocado Smoothie",
@@ -162,7 +162,7 @@
         "likedBy": [
             {
                 "_id": "668550b989b50bfdbcc56198",
-                "name": "Dereje Getahun",
+                "name": "Test User",
                 "image": "https://lh3.googleusercontent.com/a/ACg8ocLpXxo_jA6JpSTa9zyrvTVAxmZo-abqYf0gNKXqSQfnAdaXaA=s96-c"
             }
         ],

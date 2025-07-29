@@ -12,7 +12,7 @@ const userNavigation = [
 const navigation = [
     { name: 'Home', route: '/Home', style: 'text-gray-300 hover:bg-brand-700 hover:text-white' },
     { name: 'Create Recipes', route: '/CreateRecipe', style: 'bg-brand-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-brand-600 transition-all animate-pulse' },
-    { name: 'About', route: '/', style: 'text-gray-300 hover:bg-brand-700 hover:text-white' },
+    { name: 'About', route: '/About', style: 'text-gray-300 hover:bg-brand-700 hover:text-white' },
 ]
 
 function classNames(...classes: string[]) {
@@ -35,9 +35,6 @@ function Header({ user }: HeaderProps) {
         if (menu.name === 'Sign out') {
             signOut()
             return
-        }
-        if (menu.name === 'About') {
-            window.open('https://github.com/Dereje1/smart-recipe-generator', '_blank');
         }
         router.push(menu.route)
     }
@@ -81,15 +78,6 @@ function Header({ user }: HeaderProps) {
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-4 flex items-center md:ml-6">
-                                    {/* Buy Me a Coffee Button */}
-                                    <a
-                                        href="https://www.buymeacoffee.com/dereje"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="ml-4 bg-amber-500 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-300 transition"
-                                    >
-                                        ☕ Buy Me a Coffee
-                                    </a>
                                     {/* Profile dropdown */}
                                     <Menu as="div" className="relative ml-3">
                                         <div>
@@ -157,17 +145,6 @@ function Header({ user }: HeaderProps) {
                                     {item.name}
                                 </DisclosureButton>
                             ))}
-                        </div>
-                        {/* ☕ Buy Me a Coffee – mobile */}
-                        <div className="px-2 pb-3">
-                            <a
-                                href="https://www.buymeacoffee.com/dereje"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-amber-500 text-white font-bold px-4 py-2 rounded-lg shadow-sm hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-300 transition"
-                            >
-                                ☕ Buy Me a Coffee
-                            </a>
                         </div>
                         <div className="border-t border-brand-700 pb-3 pt-4">
                             <div className="flex items-center px-5">

@@ -58,7 +58,7 @@ function Navigation({
       setIsComplete(false);
       setLoadingType('generation');
 
-      const { recipes, openaiPromptId } = await call_api({
+      const { recipes, geminiPromptId } = await call_api({
         address: '/api/generate-recipes',
         method: 'post',
         payload: {
@@ -67,10 +67,10 @@ function Navigation({
         },
       });
       let parsedRecipes = JSON.parse(recipes);
-      parsedRecipes = parsedRecipes.map((recipe: Recipe, idx: number) => ({
-        ...recipe,
-        openaiPromptId: `${openaiPromptId}-${idx}`, // Make unique for client key iteration
-      }));
+              parsedRecipes = parsedRecipes.map((recipe: Recipe, idx: number) => ({
+          ...recipe,
+          geminiPromptId: `${geminiPromptId}-${idx}`, // Make unique for client key iteration
+        }));
 
       setGeneratedRecipes(parsedRecipes);
       setIsComplete(true);

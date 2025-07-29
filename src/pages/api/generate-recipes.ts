@@ -18,7 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
 
         // Call n8n workflow to generate recipe with image
         console.info('Generating recipe via n8n workflow...');
-        const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
+        const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL || 'http://localhost:5678/webhook/generate-recipe';
         if (!n8nWebhookUrl) {
             return res.status(500).json({ error: 'N8N webhook URL not configured' });
         }
@@ -31,7 +31,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
             body: JSON.stringify({
                 ingredients,
                 dietaryPreferences,
-                userId: session.user.id
+                userId: session.user.id,
+                sessionId: `user-${session.user.id}-${Date.now()}`
             })
         });
 
@@ -44,7 +45,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
         // Return the complete recipe with image
         res.status(200).json({
             recipes: result.recipe,
-            openaiPromptId: result.recipe.openaiPromptId
+            geminiPromptId: result.recipe.geminiPromptId
         });
     } catch (error) {
         // Handle any errors that occur during recipe generation

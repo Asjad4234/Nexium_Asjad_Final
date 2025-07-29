@@ -35,13 +35,12 @@ describe('The Header', () => {
         expect(routePushMock).toHaveBeenCalledWith('/Home')
     })
 
-    it('will open about link', () => {
-        global.open = jest.fn();
+    it('will navigate to about page', () => {
         const { container } = render(
             <Header user={{ name: 'mock username' }} />
         )
         fireEvent.click(screen.getByText('About'));
-        expect(global.open).toHaveBeenCalledWith("https://github.com/Dereje1/smart-recipe-generator", "_blank")
+        expect(routePushMock).toHaveBeenCalledWith('/About')
     })
     it('will be empty for a missing user', () => {
         const { container } = render(
@@ -70,10 +69,6 @@ describe('The Header', () => {
         expect(signOut).toHaveBeenCalled()
     })
 
-    it('contains a buy me a coffee link', () => {
-        render(<Header user={{ name: 'mock username' }} />)
-        const link = screen.getByRole('link', { name: /buy/i })
-        expect(link).toHaveAttribute('href', 'https://www.buymeacoffee.com/dereje')
-    })
+
 
 })

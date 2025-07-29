@@ -54,7 +54,7 @@ describe('Start to finish recipe creation and submission', () => {
         const getRecipesFromAPI = jest.spyOn(apiCalls, 'call_api');
         getRecipesFromAPI.mockImplementationOnce(() => Promise.resolve({
             recipes: JSON.stringify(stubRecipeBatch),
-            openaiPromptId: "mock-openAI-Prompt-Id"
+            geminiPromptId: "mock-gemini-prompt-id"
         }))
 
         render(<CreateRecipe recipeCreationData={{ ingredientList: ingredientListStub, reachedLimit: false }} />)
@@ -116,11 +116,11 @@ describe('Start to finish recipe creation and submission', () => {
                 recipes: [
                     {
                         ...stubRecipeBatch[0],
-                        openaiPromptId: 'mock-openAI-Prompt-Id-0'
+                        geminiPromptId: 'mock-gemini-prompt-id-0'
                     },
                     {
                         ...stubRecipeBatch[1],
-                        openaiPromptId: 'mock-openAI-Prompt-Id-1'
+                        geminiPromptId: 'mock-gemini-prompt-id-1'
                     },
                 ]
             }

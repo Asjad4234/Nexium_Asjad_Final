@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import mongoose from 'mongoose';
-import { generateRecipeTags } from '../../lib/openai';
+import { generateRecipeTags } from '../../lib/gemini';
 import { apiMiddleware } from '../../lib/apiMiddleware';
 import { connectDB } from '../../lib/mongodb';
 import recipe from '../../models/recipe';
@@ -32,7 +32,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
             ...r,
             owner: new mongoose.Types.ObjectId(session.user.id),
             imgLink: getImageLink(r),
-            openaiPromptId: r.openaiPromptId.split('-')[0] // Remove client key iteration
+            geminiPromptId: r.geminiPromptId.split('-')[0] // Remove client key iteration
         }));
 
         // Connect to MongoDB and save recipes

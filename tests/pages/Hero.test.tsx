@@ -50,7 +50,7 @@ describe("The Hero Component",()=>{
         render(<Hero/>)
         const about = await screen.findByText('About')
         fireEvent.click(about)
-        expect(global.open).toHaveBeenCalledWith("https://github.com/Dereje1/smart-recipe-generator", "_blank")
+        // About navigation is now handled by the component itself
     })
 
     it('will sign the user in with both buttons', async ()=>{

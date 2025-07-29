@@ -35,7 +35,7 @@ export const stub_recipe_1 = {
         "nutritionalInformation": "Recipe_1_nutritionalInformation"
     },
     "imgLink": "https://smart-recipe-generator.s3.amazonaws.com/Recipe_1",
-    "openaiPromptId": "6683b8908475eac9af5fe834",
+    "geminiPromptId": "6683b8908475eac9af5fe834",
     "comments": [],
     "tags": [{ tag: 'specialtag', _id: 'stub_tag_id' }],
     "createdAt": "2024-07-02T08:22:43.168Z",
@@ -79,7 +79,7 @@ const stub_recipe_2 = {
         "nutritionalInformation": "Recipe_2_nutritionalInformation"
     },
     "imgLink": "https://smart-recipe-generator.s3.amazonaws.com/Recipe_2",
-    "openaiPromptId": "6683b8908475eac9af5fe836",
+    "geminiPromptId": "6683b8908475eac9af5fe836",
     "comments": [],
     "tags": [],
     "createdAt": "2024-07-02T08:22:43.168Z",

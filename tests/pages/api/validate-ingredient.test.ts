@@ -4,7 +4,7 @@
 import validateIngredient from '../../../src/pages/api/validate-ingredient';
 import Ingredient from '../../../src/models/ingredient';
 import { mockRequestResponse } from '../../apiMocks';
-import * as openai from '../../../src/lib/openai';
+import * as gemini from '../../../src/lib/gemini';
 import * as nextAuth from 'next-auth';
 import { getServerSessionStub } from '../../stub';
 
@@ -26,7 +26,7 @@ jest.mock('../../../src/lib/mongodb', () => ({
 }))
 
 //open ai validation
-jest.mock('../../../src/lib/openai', () => ({
+jest.mock('../../../src/lib/gemini', () => ({
     validateIngredient: jest.fn(() => Promise.resolve(null))
 }))
 
@@ -35,7 +35,7 @@ describe('Liking a recipe', () => {
     let validateIngredientSpy: any
     beforeEach(() => {
         getServerSessionSpy = jest.spyOn(nextAuth, 'getServerSession')
-        validateIngredientSpy = jest.spyOn(openai, 'validateIngredient');
+        validateIngredientSpy = jest.spyOn(gemini, 'validateIngredient');
     })
 
     afterEach(() => {
@@ -72,7 +72,7 @@ describe('Liking a recipe', () => {
         expect(res._getJSONData()).toEqual({ error: 'Ingredient name is required' })
     })
 
-    it('shall respond with error message if openai fails to validate request', async () => {
+    it('shall respond with error message if gemini fails to validate request', async () => {
         getServerSessionSpy.mockImplementationOnce(() => Promise.resolve(getServerSessionStub))
 
         const { req, res } = mockRequestResponse('POST')

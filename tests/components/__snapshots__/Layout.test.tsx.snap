@@ -148,7 +148,7 @@ exports[`The Layout renders the hero if the user is not authenticated 1`] = `
              
             <a
               class="font-semibold text-brand-600"
-              href="https://github.com/Dereje1/smart-recipe-generator"
+              href="#"
             >
               <span
                 aria-hidden="true"

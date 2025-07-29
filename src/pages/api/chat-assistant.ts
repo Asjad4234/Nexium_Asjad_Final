@@ -38,7 +38,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
         }
 
         // Call n8n workflow for chat response
-        const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL?.replace('/generate-recipe', '/chat-assistant');
+        const n8nWebhookUrl = process.env.N8N_CHAT_WEBHOOK_URL || 'http://localhost:5678/webhook/chat-assistant-updated';
         if (!n8nWebhookUrl) {
             return res.status(500).json({ error: 'N8N webhook URL not configured' });
         }
@@ -53,7 +53,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
                 recipeId,
                 history,
                 userId: session.user.id,
-                recipe // Pass the recipe data to n8n
+                recipe, // Pass the recipe data to n8n
+                sessionId: `chat-${session.user.id}-${Date.now()}`
             })
         });
 

@@ -31,7 +31,7 @@ const recipeSchema = new mongoose.Schema({
         nutritionalInformation: { type: String, required: true },
     },
     imgLink: { type: String },
-    openaiPromptId: {type: String, required: true},
+    geminiPromptId: {type: String, required: true},
     comments: {
         type: [commentSchema],
         default: [],

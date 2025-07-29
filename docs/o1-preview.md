@@ -1,4 +1,4 @@
-**Note: I asked o1-preview to give a feedback and a refactor recommendation for the delete recipe file as of https://github.com/Dereje1/smart-recipe-generator/commit/05cb3abfab1f560e75da62d6e4d74b8127f5d9f4 ... the answers were quite impressive especially compared to the previous iteration of the LLM so logging here**
+**Note: I asked o1-preview to give a feedback and a refactor recommendation for the delete recipe file... the answers were quite impressive especially compared to the previous iteration of the LLM so logging here**
 
 **Overall Feedback:**
 

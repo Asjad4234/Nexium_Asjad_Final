@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { apiMiddleware } from '../../lib/apiMiddleware';
-import { validateIngredient } from '../../lib/openai';
+import { validateIngredient } from '../../lib/gemini';
 import Ingredient from '../../models/ingredient';
 import mongoose from 'mongoose';
 
@@ -20,8 +20,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
             return res.status(400).json({ error: 'Ingredient name is required' });
         }
 
-        // Validate ingredient using OpenAI
-        console.info('Validating ingredient from OpenAI...');
+        // Validate ingredient using Gemini
+        console.info('Validating ingredient from Gemini...');
         const response = await validateIngredient(ingredientName, userId);
         const parsedResponse = response ? JSON.parse(response) : null;
 
