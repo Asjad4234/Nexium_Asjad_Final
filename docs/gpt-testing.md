@@ -1,4 +1,4 @@
-To test a custom hook like `useActionPopover` using **@testing-library/react** and **Jest**, follow these steps:
+To test a custom hook like `useActionPopover` using **@testing-library/react**, follow these steps:
 
 ### 1. Set Up a Test Environment for the Hook
 You need to render the hook in a test component since hooks can only be called inside React function components.
@@ -18,8 +18,7 @@ You can write tests for various hook actions (`handleClone`, `handleCopy`, etc.)
 #### Dependencies
 Ensure you have the following installed:
 - `@testing-library/react`
-- `jest`
-- `jest-mock`
+
 - `@testing-library/react-hooks`
 
 #### Test Code

@@ -2,7 +2,7 @@
 
 ### ✅ Summary of Current Coverage
 
-The `smart-recipe-generator` project includes a robust suite of Cypress-based E2E tests covering a few critical user paths:
+The `smart-recipe-generator` project previously included E2E tests covering critical user paths:
 
 #### Currently Covered Flows:
 
@@ -56,9 +56,9 @@ The current tests verify core recipe interactions but **miss several other impor
 ### 🧪 CI & Runtime Notes
 
 * ✅ Tests are mock-heavy, which is good for determinism
-* ❌ Tests **fail in CI** due to missing `Xvfb`, required by Cypress for headless Chrome.
+* ❌ E2E testing has been removed from the project.
 
-  * **Fix**: Add Xvfb manually or use the official [Cypress Docker container](https://docs.cypress.io/guides/continuous-integration/introduction#Docker)
+  * **Status**: No E2E testing framework is currently configured.
 
 ---
 
@@ -83,7 +83,7 @@ The current tests verify core recipe interactions but **miss several other impor
 
 4. **Enable CI Execution**:
 
-   * Use `xvfb-run` or Cypress Docker container to allow tests to run in headless mode during CI builds
+   * No E2E testing framework is currently configured
 
 ---
 

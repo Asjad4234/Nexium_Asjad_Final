@@ -114,9 +114,7 @@ jspm_packages/
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# Cypress
-cypress/videos/
-cypress/screenshots/
+
 
 # Temporary files
 *.tmp

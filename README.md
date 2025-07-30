@@ -18,7 +18,7 @@ A modern, AI-powered recipe generation application built with Next.js, OpenAI GP
 - **Backend**: Next.js API Routes, MongoDB with Mongoose
 - **AI Integration**: OpenAI GPT-3.5-turbo via n8n workflows
 - **Authentication**: NextAuth.js with Google OAuth
-- **Testing**: Jest, Cypress E2E testing
+- **Testing**: No testing framework configured
 - **Deployment**: Vercel-ready configuration
 
 ### 💰 Cost Optimized
@@ -95,8 +95,6 @@ smart-recipe-generator/
 │   ├── types/              # TypeScript definitions
 │   └── utils/              # Helper functions
 ├── docs/                   # Documentation
-├── tests/                  # Test files
-├── cypress/                # E2E tests
 ├── n8n-workflow-*.json     # n8n workflow configurations
 └── public/                 # Static assets
 ```
@@ -115,16 +113,6 @@ smart-recipe-generator/
 4. **Update environment variables** with the webhook URLs
 
 ## 🧪 Testing
-
-### Unit Tests
-```bash
-npm test
-```
-
-### E2E Tests
-```bash
-npm run cypress:open
-```
 
 ### N8N Workflow Tests
 ```bash
