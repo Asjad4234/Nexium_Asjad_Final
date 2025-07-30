@@ -42,10 +42,28 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
 
         const result = await response.json();
         
+        // Debug logging
+        console.log('n8n response:', JSON.stringify(result, null, 2));
+        
+        // Ensure we have a valid recipe from n8n
+        if (!result.recipe || !result.success) {
+            throw new Error('Invalid recipe response from n8n');
+        }
+
+        // Convert the single recipe to an array and stringify it for the frontend
+        const recipesArray = [result.recipe];
+        const recipesJson = JSON.stringify(recipesArray);
+        
+        // Debug logging
+        console.log('Sending to frontend:', {
+            recipes: recipesJson,
+            geminiPromptId: result.recipe.openaiPromptId
+        });
+        
         // Return the complete recipe with image
         res.status(200).json({
-            recipes: result.recipe,
-            geminiPromptId: result.recipe.geminiPromptId
+            recipes: recipesJson,
+            geminiPromptId: result.recipe.openaiPromptId
         });
     } catch (error) {
         // Handle any errors that occur during recipe generation

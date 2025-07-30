@@ -117,7 +117,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Add placeholder image and complete the recipe response\nconst data = $input.first().json;\nconst recipe = data.recipe;\nconst userId = data.userId;\n\n// Use a placeholder image from Unsplash (free)\nconst placeholderImage = `https://source.unsplash.com/1024x1024/?${encodeURIComponent(recipe.name + ' food')}`;\n\n// Create the complete response\nconst completeRecipe = {\n  ...recipe,\n  imgLink: placeholderImage,\n  userId: userId,\n  geminiPromptId: `generated-${Date.now()}`\n};\n\nreturn {\n  json: {\n    recipe: completeRecipe,\n    success: true\n  }\n};"
+        "jsCode": "// Add placeholder image and complete the recipe response\nconst data = $input.first().json;\nconst recipe = data.recipe;\nconst userId = data.userId;\n\n// Use a placeholder image from Unsplash (free)\nconst placeholderImage = `https://source.unsplash.com/1024x1024/?${encodeURIComponent(recipe.name + ' food')}`;\n\n// Create the complete response\nconst completeRecipe = {\n  ...recipe,\n  imgLink: placeholderImage,\n  userId: userId,\n  openaiPromptId: `generated-${Date.now()}`\n};\n\nreturn {\n  json: {\n    recipe: completeRecipe,\n    success: true\n  }\n};"
       },
       "id": "9ef8bd9c-a014-4a71-b924-c34c4f2330ef",
       "name": "Add Placeholder Image",

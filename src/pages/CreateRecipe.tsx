@@ -66,12 +66,23 @@ function Navigation({
           dietaryPreferences: preferences,
         },
       });
+      
+      // Debug logging
+      console.log('API response:', { recipes, geminiPromptId });
+      
       let parsedRecipes = JSON.parse(recipes);
-              parsedRecipes = parsedRecipes.map((recipe: Recipe, idx: number) => ({
-          ...recipe,
-          geminiPromptId: `${geminiPromptId}-${idx}`, // Make unique for client key iteration
-        }));
-
+      
+      // Debug logging
+      console.log('Parsed recipes:', parsedRecipes);
+      
+      parsedRecipes = parsedRecipes.map((recipe: Recipe, idx: number) => ({
+        ...recipe,
+        openaiPromptId: `${geminiPromptId}-${idx}`, // Make unique for client key iteration
+      }));
+      
+      // Debug logging
+      console.log('Final recipes with IDs:', parsedRecipes);
+      
       setGeneratedRecipes(parsedRecipes);
       setIsComplete(true);
       setTimeout(() => {
@@ -120,6 +131,11 @@ function Navigation({
     />
   ) : (
     <div className="min-h-screen bg-gradient-to-r from-brand-50 to-white p-4 md:p-8 flex justify-center">
+      {/* Debug info */}
+      <div className="fixed top-4 right-4 bg-black text-white p-2 rounded text-xs z-50">
+        Debug: generatedRecipes.length = {generatedRecipes.length}, step = {step}
+      </div>
+      
       <div className={`w-full space-y-4 ${generatedRecipes.length ? 'max-w-7xl' : 'max-w-2xl'}`}> 
         {generatedRecipes.length === 0 ? (
           steps.slice(0, 3).map((title, idx) => (

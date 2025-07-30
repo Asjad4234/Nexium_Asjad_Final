@@ -21,6 +21,12 @@ const nextConfig = {
                 hostname: 'www.gravatar.com',
                 pathname: '/**',
             },
+            // Allow Unsplash images for recipe placeholders
+            {
+                protocol: 'https',
+                hostname: 'source.unsplash.com',
+                pathname: '/**',
+            },
         ],
         minimumCacheTTL: 2_592_000,          // 30 days
         deviceSizes: [320, 420, 768, 1024, 1280, 1440, 1920],
