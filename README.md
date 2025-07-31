@@ -153,10 +153,8 @@ smart-recipe-generator/
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+### Vercel 
+Deployed to https://nexium-asjad-final.vercel.app/Home
 
 ### Environment Variables for Production
 ```env
