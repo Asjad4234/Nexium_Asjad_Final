@@ -73,7 +73,7 @@ export default function DietaryPreferences({
 
   return (
     <div
-      className="w-full p-4 sm:p-6 bg-white shadow-md rounded-xl animate-fadeInUp"
+      className="w-full p-4 sm:p-6 bg-white animate-fadeInUp"
     >
       {/* Enhanced Title */}
       <h2 className="text-xl font-medium text-gray-800 mb-2 sm:text-2xl">
@@ -85,14 +85,14 @@ export default function DietaryPreferences({
 
       {/* "No Preference" Option */}
       <div className="flex items-center mb-4">
-        <Checkbox
-          checked={noPreference}
-          onChange={handleNoPreference}
-          className={`h-5 w-5 rounded border border-gray-300 flex items-center justify-center ${noPreference ? 'bg-brand-600' : 'bg-white'
-            } focus:outline-none focus:ring-2 focus:ring-brand-500`}
-          disabled={Boolean(generatedRecipes.length)}
-          aria-label="No Dietary Preference"
-        >
+                 <Checkbox
+           checked={noPreference}
+           onChange={handleNoPreference}
+           className={`h-5 w-5 rounded border border-gray-300 flex items-center justify-center ${noPreference ? 'bg-orange-500' : 'bg-white'
+             } focus:outline-none focus:ring-2 focus:ring-orange-500`}
+           disabled={Boolean(generatedRecipes.length)}
+           aria-label="No Dietary Preference"
+         >
           {noPreference && <CheckIcon className="h-3 w-3 text-white" />}
         </Checkbox>
         <span className="ml-3 text-gray-700">No Preference</span>
@@ -109,22 +109,22 @@ export default function DietaryPreferences({
             <div
               key={option}
               title={tooltipMap[option]}
-              className={`flex items-center p-2 sm:p-3 rounded-lg border transition-colors cursor-pointer ${selected ? 'bg-brand-50 border-brand-600' : 'bg-white border-gray-200 hover:bg-gray-50'} ${noPreference || generatedRecipes.length ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-md'}`}
+                             className={`flex items-center p-2 sm:p-3 rounded-lg border transition-colors cursor-pointer ${selected ? 'bg-orange-50 border-orange-500' : 'bg-white border-gray-200 hover:bg-gray-50'} ${noPreference || generatedRecipes.length ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-md'}`}
               onClick={() => {
                 if (noPreference || generatedRecipes.length) return;
                 handlePreferenceChange(!selected, option);
               }}
             >
-              <Checkbox
-                checked={selected}
-                onChange={(e) => handlePreferenceChange(e, option)}
-                className={`shrink-0 h-5 w-5 rounded border flex items-center justify-center ${selected ? 'bg-brand-600 border-brand-600' : 'bg-white border-gray-300'} focus:outline-none focus:ring-2 focus:ring-brand-500 transition-colors`}
-                disabled={noPreference || Boolean(generatedRecipes.length)}
-                aria-label={option}
-              >
+                             <Checkbox
+                 checked={selected}
+                 onChange={(e) => handlePreferenceChange(e, option)}
+                 className={`shrink-0 h-5 w-5 rounded border flex items-center justify-center ${selected ? 'bg-orange-500 border-orange-500' : 'bg-white border-gray-300'} focus:outline-none focus:ring-2 focus:ring-orange-500 transition-colors`}
+                 disabled={noPreference || Boolean(generatedRecipes.length)}
+                 aria-label={option}
+               >
                 {selected && <CheckIcon className="h-3 w-3 text-white" />}
               </Checkbox>
-              <Icon className="shrink-0 w-4 h-4 text-brand-600 ml-3" aria-hidden="true" />
+                             <Icon className="shrink-0 w-4 h-4 text-orange-500 ml-3" aria-hidden="true" />
               <span title={tooltipMap[option]} className="ml-2 text-gray-700">{option}</span>
             </div>
           );

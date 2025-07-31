@@ -25,7 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }
 
   if (status === 'unauthenticated') {
-    if (router.pathname === '/RecipeDetail') {
+    if (router.pathname === '/RecipeDetail' || router.pathname === '/ChatAssistant') {
       signIn('google')
       return;
     }
@@ -36,7 +36,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
       <div>
         <Header user={session.user} />
-        <main className="min-h-screen bg-brand-50">{children}</main>
+        <main className="min-h-screen">{children}</main>
       </div>
     );
   }

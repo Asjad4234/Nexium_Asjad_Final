@@ -35,18 +35,16 @@ function ViewRecipes({ recipes, handleRecipeListUpdate, lastRecipeRef }: ViewRec
     if (!recipes.length) return null;
     return (
         <>
-            <div className="flex justify-center items-center min-h-screen p-5 mb-3">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {recipes.map((recipe, index) => (
-                        <FrontDisplay
-                            key={recipe._id}
-                            recipe={recipe}
-                            showRecipe={handleShowRecipe}
-                            updateRecipeList={handleRecipeListUpdate}
-                            ref={index === recipes.length - 1 ? lastRecipeRef : undefined}
-                        />
-                    ))}
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+                {recipes.map((recipe, index) => (
+                    <FrontDisplay
+                        key={recipe._id}
+                        recipe={recipe}
+                        showRecipe={handleShowRecipe}
+                        updateRecipeList={handleRecipeListUpdate}
+                        ref={index === recipes.length - 1 ? lastRecipeRef : undefined}
+                    />
+                ))}
             </div>
             <Dialog
                 isOpen={Boolean(openDialog)}

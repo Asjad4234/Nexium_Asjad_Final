@@ -9,7 +9,7 @@ A modern, AI-powered recipe generation application built with Next.js, OpenAI GP
 ### 🎯 Core Functionality
 - **AI Recipe Generation** - Create recipes from ingredients using GPT-3.5-turbo
 - **Smart Chat Assistant** - Get cooking tips and recipe modifications
-- **Free Image Integration** - Automatic Unsplash food images
+- **Free Image Integration** - Automatic Pexels food images
 - **Dietary Preferences** - Support for vegan, gluten-free, and other dietary needs
 - **User Authentication** - Google OAuth integration with NextAuth.js
 
@@ -24,7 +24,7 @@ A modern, AI-powered recipe generation application built with Next.js, OpenAI GP
 ### 💰 Cost Optimized
 - **Free Tier Compatible** - Optimized for OpenAI's free tier ($5 credit)
 - **Efficient Token Usage** - Minimal API calls for maximum value
-- **Free Image Service** - Unsplash integration instead of DALL·E
+- **Free Image Service** - Pexels integration for high-quality food images
 
 ## 🛠️ Installation
 
@@ -141,7 +141,7 @@ node test-n8n-online.js
 ### Performance
 - **Recipe Generation**: 2-5 seconds
 - **Chat Response**: 1-3 seconds
-- **Image Loading**: Instant (Unsplash CDN)
+- **Image Loading**: Instant (Pexels CDN)
 
 ## 🤝 Contributing
 
@@ -159,7 +159,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **OpenAI** for GPT-3.5-turbo API
 - **n8n** for workflow automation
-- **Unsplash** for free food images
+- **Pexels** for free food images
 - **Next.js** for the amazing framework
 - **Tailwind CSS** for beautiful styling
 

@@ -12,12 +12,21 @@ export const useRecipeData = (recipeId?: string) => {
 
     const fetchRecipe = async () => {
       try {
+        console.log('Fetching recipe data for ID:', recipeId);
         const data = await call_api({
           address: `/api/get-single-recipe?recipeId=${recipeId}`,
         });
         setRecipeData(data);
-      } catch (err) {
-        setError((err as Error).message);
+      } catch (err: any) {
+        console.error('Error fetching recipe:', err);
+        // Handle specific error types
+        if (err?.response?.status === 401) {
+          setError('You must be logged in to access this recipe.');
+        } else if (err?.response?.status === 404) {
+          setError('Recipe not found.');
+        } else {
+          setError(err?.message || 'Failed to load recipe data.');
+        }
       } finally {
         setLoading(false);
       }

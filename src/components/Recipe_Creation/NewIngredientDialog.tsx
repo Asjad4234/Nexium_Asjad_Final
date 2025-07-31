@@ -92,7 +92,7 @@ function NewIngredientDialog({ ingredientList, updateIngredientList }: NewIngred
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="inline-flex items-center px-5 py-2.5 bg-brand-600 text-white text-sm font-medium rounded-full hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 shadow-md transition duration-300">
+        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-semibold rounded-full hover:from-orange-600 hover:to-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 shadow-lg transition duration-300 transform hover:scale-105">
         <PlusCircleIcon className="block mr-2 h-6 w-6" />
         Add New Ingredient
       </Button>
@@ -116,7 +116,7 @@ function NewIngredientDialog({ ingredientList, updateIngredientList }: NewIngred
                 onChange={handleInputChange}
               />
             </Field>
-            <div className="text-red-400 font-bold mb-2" style={{ whiteSpace: 'pre-line' }}>
+            <div className="text-red-500 font-bold mb-2" style={{ whiteSpace: 'pre-line' }}>
               <span>{message}</span>
             </div>
             {isLoading ? <Loading /> :

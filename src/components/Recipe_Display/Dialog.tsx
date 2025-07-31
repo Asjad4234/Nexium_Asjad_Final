@@ -60,21 +60,11 @@ export default function RecipeDisplayModal({ isOpen, close, recipe, removeRecipe
                                 {
                                     <div className="flex justify-between items-start w-full">
                                         <div className="flex items-center mb-2 mt-2 ml-2 bg-gray-100 p-2 rounded-lg">
-                                            <Image
-                                                className="h-10 w-10 rounded-full"
-                                                src={
-                                                    recipe.owner.image ||
-                                                    "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
-                                                }
-                                                alt={`Profile-Picture-${recipe.owner.name}`}
-                                                width={25}
-                                                height={25}
-                                            />
-                                            <div className="ml-4">
+                                            <div className="ml-2">
                                                 <p className="text-lg font-semibold text-gray-900">
                                                     <UserLink
-                                                        userId={recipe.owner._id}
-                                                        name={recipe.owner.name}
+                                                        userId={recipe.owner?._id || ''}
+                                                        name={recipe.owner?.name || 'Unknown User'}
                                                     />
                                                 </p>
                                                 <p className="text-sm text-gray-500">{formatDate(recipe.createdAt)}</p>

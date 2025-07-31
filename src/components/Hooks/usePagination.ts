@@ -102,7 +102,7 @@ export const usePagination = ({
   sortOption,
   searchQuery = "",
   searchTrigger = false,
-  limit = 12,
+  limit = 6,
   resetSearchTrigger,
 }: UsePaginationProps) => {
   const [state, dispatch] = useReducer(reducer, initialState(searchQuery, sortOption));

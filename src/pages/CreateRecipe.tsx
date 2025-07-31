@@ -130,27 +130,45 @@ function Navigation({
       fullHeight
     />
   ) : (
-    <div className="min-h-screen bg-gradient-to-r from-brand-50 to-white p-4 md:p-8 flex justify-center">
-      {/* Debug info */}
-      <div className="fixed top-4 right-4 bg-black text-white p-2 rounded text-xs z-50">
-        Debug: generatedRecipes.length = {generatedRecipes.length}, step = {step}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Create Amazing <span className="text-orange-500">Recipes</span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Let AI help you transform your ingredients into delicious recipes tailored to your preferences.
+          </p>
+        </div>
       </div>
-      
-      <div className={`w-full space-y-4 ${generatedRecipes.length ? 'max-w-7xl' : 'max-w-2xl'}`}> 
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-12">
+        <div className={`w-full space-y-6 ${generatedRecipes.length ? 'max-w-7xl' : 'max-w-3xl'} mx-auto`}> 
         {generatedRecipes.length === 0 ? (
           steps.slice(0, 3).map((title, idx) => (
-            <div key={title} className="bg-white shadow rounded-xl">
+            <div key={title} className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
               <button
-                className={`w-full flex items-center justify-between p-4 font-medium text-left`}
+                className={`w-full flex items-center justify-between p-6 font-semibold text-left transition-all duration-300 ${
+                  step === idx ? 'bg-white text-gray-800 border-b border-gray-100' : 'bg-white/50 text-gray-700 hover:bg-white/80'
+                }`}
                 onClick={() => setStep(step === idx ? -1 : idx)}
               >
-                <span>{`Step ${idx + 1}: ${title}`}</span>
+                <div className="flex items-center gap-3">
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                    step === idx ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-600'
+                  }`}>
+                    {idx + 1}
+                  </div>
+                  <span className="text-lg">{title}</span>
+                </div>
                 <ChevronDownIcon
-                  className={`w-5 h-5 transform transition-transform ${step === idx ? 'rotate-180' : ''}`}
+                  className={`w-6 h-6 transform transition-transform duration-300 ${step === idx ? 'rotate-180' : ''}`}
                 />
               </button>
               {step === idx && (
-                <div className="p-4">
+                <div className="p-6 bg-white">
                   {isLoading ? (
                     <Loading isProgressBar isComplete={isComplete} loadingType={loadingType} />
                   ) : (
@@ -172,8 +190,8 @@ function Navigation({
           ))
         ) : (
           <>
-            <div className="bg-white shadow rounded-xl">
-              <div className="p-4">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
+              <div className="p-6">
                 <ReviewComponent
                   ingredients={ingredients}
                   dietaryPreference={preferences}
@@ -183,7 +201,7 @@ function Navigation({
                 />
               </div>
             </div>
-            <div className="bg-white shadow rounded-xl p-4">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 overflow-hidden p-6">
               {isLoading ? (
                 <Loading isProgressBar isComplete={isComplete} loadingType={loadingType} />
               ) : (
@@ -197,6 +215,7 @@ function Navigation({
             </div>
           </>
         )}
+        </div>
       </div>
 
     </div>

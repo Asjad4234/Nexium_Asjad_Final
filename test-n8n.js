@@ -1,10 +1,13 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 async function testN8nWorkflow() {
     try {
         console.log('Testing n8n workflow...');
         
-        const n8nWebhookUrl = 'http://localhost:5678/webhook/generate-recipe';
+        // Use the production URL from environment or fallback to local
+        const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL || 'http://localhost:5678/webhook/generate-recipe';
+        
+        console.log('Using n8n webhook URL:', n8nWebhookUrl);
         
         const testData = {
             ingredients: ['chicken', 'garlic', 'onion'],
@@ -23,8 +26,13 @@ async function testN8nWorkflow() {
             body: JSON.stringify(testData)
         });
         
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers.raw());
+        
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            const errorText = await response.text();
+            console.log('Error response body:', errorText);
+            throw new Error(`HTTP error! status: ${response.status}, body: ${errorText}`);
         }
         
         const result = await response.json();
@@ -38,10 +46,12 @@ async function testN8nWorkflow() {
             console.log('Recipe has imgLink:', !!result.recipe.imgLink);
         } else {
             console.log('❌ n8n workflow response is invalid');
+            console.log('Response keys:', Object.keys(result));
         }
         
     } catch (error) {
         console.error('❌ Error testing n8n workflow:', error.message);
+        console.error('Full error:', error);
     }
 }
 

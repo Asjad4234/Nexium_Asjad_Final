@@ -9,11 +9,10 @@ export const filterResults = (recipes: ExtendedRecipe[], userId: string) => {
     {
       ...recipe,
       owner: {
-        _id: recipe.owner._id,
-        name: recipe.owner.name,
-        image: recipe.owner.image
+        _id: recipe.owner?._id || '',
+        name: recipe.owner?.name || 'Unknown User'
       },
-      owns: recipe.owner._id.toString() === userId // Flags if the recipe belongs to the user
+      owns: recipe.owner?._id?.toString() === userId // Flags if the recipe belongs to the user
     }
   ))
 }

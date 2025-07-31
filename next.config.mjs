@@ -16,10 +16,10 @@ const nextConfig = {
                 hostname: 'www.gravatar.com',
                 pathname: '/**',
             },
-            // Allow Unsplash images for recipe placeholders
+            // Allow Pexels CDN images for recipe images
             {
                 protocol: 'https',
-                hostname: 'source.unsplash.com',
+                hostname: 'images.pexels.com',
                 pathname: '/**',
             },
         ],

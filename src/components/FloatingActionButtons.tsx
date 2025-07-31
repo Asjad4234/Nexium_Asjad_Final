@@ -27,24 +27,24 @@ const FloatingActionButtons = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 flex flex-col items-end space-y-3">
+    <div className="fixed bottom-8 right-8 flex flex-col items-end space-y-4 z-50">
       {/* "Create Recipe" Button (Always Visible) */}
       <button
         onClick={() => router.push('/CreateRecipe')}
-        className="bg-brand-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-brand-700 transition-all"
+        className="bg-gradient-to-r from-orange-500 to-orange-600 text-white w-16 h-16 rounded-2xl shadow-2xl flex items-center justify-center text-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-110"
         aria-label="Create Recipe"
       >
-        <PlusIcon className="h-6 w-6" />
+        <PlusIcon className="h-7 w-7" />
       </button>
 
       {/* Scroll to Top Button (Appears on Scroll) */}
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-brand-400 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-xl hover:bg-brand-500 transition-all"
+          className="bg-white text-orange-600 w-16 h-16 rounded-2xl shadow-2xl flex items-center justify-center text-xl hover:bg-gray-50 border border-gray-200 transition-all duration-300 transform hover:scale-110"
           aria-label="Scroll to Top"
         >
-          <ArrowUpIcon className="h-6 w-6" />
+          <ArrowUpIcon className="h-7 w-7" />
         </button>
       )}
     </div>

@@ -1,0 +1,274 @@
+[
+  {
+    "_id": "688959789232274bdce6196e",
+    "name": "Quick Chicken Pasta",
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "quantity": "2 pieces",
+        "_id": "688959789232274bdce6196f"
+      },
+      {
+        "name": "Pasta",
+        "quantity": "200g",
+        "_id": "688959789232274bdce61970"
+      },
+      {
+        "name": "Tomato sauce",
+        "quantity": "1 cup",
+        "_id": "688959789232274bdce61971"
+      }
+    ],
+    "instructions": [
+      "Cook pasta according to package instructions",
+      "Grill chicken until cooked through",
+      "Combine pasta with tomato sauce and chicken"
+    ],
+    "dietaryPreference": [
+      "gluten-free"
+    ],
+    "additionalInformation": {
+      "tips": "Use gluten-free pasta for dietary restrictions",
+      "variations": "Try with different sauces",
+      "servingSuggestions": "Serve hot with fresh herbs",
+      "nutritionalInformation": "High protein, moderate carbs"
+    },
+    "tags": [
+      {
+        "tag": "quick-meal",
+        "_id": "688959789232274bdce61972"
+      },
+      {
+        "tag": "dinner",
+        "_id": "688959789232274bdce61973"
+      },
+      {
+        "tag": "pasta",
+        "_id": "688959789232274bdce61974"
+      },
+      {
+        "tag": "chicken",
+        "_id": "688959789232274bdce61975"
+      }
+    ],
+    "imgLink": "https://source.unsplash.com/1024x1024/?chicken%20pasta",
+    "geminiPromptId": "test-1",
+    "owner": "688959789232274bdce6196a",
+    "createdAt": "2025-07-29T23:30:00.318Z",
+    "updatedAt": "2025-07-29T23:30:00.318Z",
+    "__v": 0
+  },
+  {
+    "_id": "688959789232274bdce61976",
+    "name": "Italian Pizza",
+    "ingredients": [
+      {
+        "name": "Pizza dough",
+        "quantity": "1 ball",
+        "_id": "688959789232274bdce61977"
+      },
+      {
+        "name": "Tomato sauce",
+        "quantity": "1/2 cup",
+        "_id": "688959789232274bdce61978"
+      },
+      {
+        "name": "Mozzarella",
+        "quantity": "200g",
+        "_id": "688959789232274bdce61979"
+      },
+      {
+        "name": "Basil",
+        "quantity": "10 leaves",
+        "_id": "688959789232274bdce6197a"
+      }
+    ],
+    "instructions": [
+      "Preheat oven to 450°F",
+      "Roll out pizza dough",
+      "Add sauce and cheese",
+      "Bake for 12-15 minutes"
+    ],
+    "dietaryPreference": [
+      "vegetarian"
+    ],
+    "additionalInformation": {
+      "tips": "Use a pizza stone for best results",
+      "variations": "Add your favorite toppings",
+      "servingSuggestions": "Serve hot with extra basil",
+      "nutritionalInformation": "Moderate calories, good protein"
+    },
+    "tags": [
+      {
+        "tag": "italian",
+        "_id": "688959789232274bdce6197b"
+      },
+      {
+        "tag": "dinner",
+        "_id": "688959789232274bdce6197c"
+      },
+      {
+        "tag": "pizza",
+        "_id": "688959789232274bdce6197d"
+      }
+    ],
+    "imgLink": "https://source.unsplash.com/1024x1024/?italian%20pizza",
+    "geminiPromptId": "test-2",
+    "owner": "688959789232274bdce6196b",
+    "createdAt": "2025-07-29T23:30:00.318Z",
+    "updatedAt": "2025-07-29T23:30:00.318Z",
+    "__v": 0
+  },
+  {
+    "_id": "688959789232274bdce6197e",
+    "name": "Healthy Asian Stir Fry",
+    "ingredients": [
+      {
+        "name": "Broccoli",
+        "quantity": "2 cups",
+        "_id": "688959789232274bdce6197f"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "1 cup",
+        "_id": "688959789232274bdce61980"
+      },
+      {
+        "name": "Soy sauce",
+        "quantity": "2 tbsp",
+        "_id": "688959789232274bdce61981"
+      },
+      {
+        "name": "Ginger",
+        "quantity": "1 tsp",
+        "_id": "688959789232274bdce61982"
+      }
+    ],
+    "instructions": [
+      "Chop vegetables",
+      "Heat wok with oil",
+      "Stir fry vegetables",
+      "Add soy sauce and ginger"
+    ],
+    "dietaryPreference": [
+      "vegan",
+      "gluten-free"
+    ],
+    "additionalInformation": {
+      "tips": "Use high heat for best results",
+      "variations": "Add tofu or chicken",
+      "servingSuggestions": "Serve with rice",
+      "nutritionalInformation": "Low calorie, high fiber"
+    },
+    "tags": [
+      {
+        "tag": "asian",
+        "_id": "688959789232274bdce61983"
+      },
+      {
+        "tag": "healthy",
+        "_id": "688959789232274bdce61984"
+      },
+      {
+        "tag": "vegetarian",
+        "_id": "688959789232274bdce61985"
+      }
+    ],
+    "imgLink": "https://source.unsplash.com/1024x1024/?asian%20stir%20fry",
+    "geminiPromptId": "test-3",
+    "owner": "688959789232274bdce6196c",
+    "createdAt": "2025-07-29T23:30:00.318Z",
+    "updatedAt": "2025-07-29T23:30:00.318Z",
+    "__v": 0
+  },
+  {
+    "_id": "688965d4b161df215f5979f4",
+    "owner": "688932da31a6b71ef74ebb74",
+    "name": "Creamy Coconut Lentil and Sweet Potato Curry",
+    "ingredients": [
+      {
+        "name": "Sweet Potatoes",
+        "quantity": "2 medium, peeled and cubed",
+        "_id": "688965d4b161df215f5979f5"
+      },
+      {
+        "name": "Red Lentils",
+        "quantity": "1 cup, rinsed",
+        "_id": "688965d4b161df215f5979f6"
+      },
+      {
+        "name": "Full-Fat Coconut Milk",
+        "quantity": "1 can (13.5 oz / 400ml)",
+        "_id": "688965d4b161df215f5979f7"
+      },
+      {
+        "name": "Fresh Spinach",
+        "quantity": "5 oz (about 5 large handfuls)",
+        "_id": "688965d4b161df215f5979f8"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "1 tbsp",
+        "_id": "688965d4b161df215f5979f9"
+      },
+      {
+        "name": "Yellow Onion",
+        "quantity": "1, diced",
+        "_id": "688965d4b161df215f5979fa"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "3 cloves, minced",
+        "_id": "688965d4b161df215f5979fb"
+      },
+      {
+        "name": "Fresh Ginger",
+        "quantity": "1 inch, grated",
+        "_id": "688965d4b161df215f5979fc"
+      },
+      {
+        "name": "Curry Powder",
+        "quantity": "2 tbsp",
+        "_id": "688965d4b161df215f5979fd"
+      },
+      {
+        "name": "Vegetable Broth",
+        "quantity": "3 cups",
+        "_id": "688965d4b161df215f5979fe"
+      },
+      {
+        "name": "Salt and Black Pepper",
+        "quantity": "to taste",
+        "_id": "688965d4b161df215f5979ff"
+      }
+    ],
+    "instructions": [
+      "Heat the olive oil in a large pot or Dutch oven over medium heat. Add the diced onion and cook until softened, about 5 minutes.",
+      "Add the minced garlic and grated ginger, and cook for another minute until fragrant.",
+      "Stir in the curry powder and cook for 30 seconds to toast the spices.",
+      "Add the cubed sweet potatoes, rinsed red lentils, vegetable broth, and the can of coconut milk. Stir everything together and season with salt and pepper.",
+      "Bring the mixture to a boil, then reduce the heat to a simmer. Cover and cook for 20-25 minutes, or until the lentils and sweet potatoes are tender, stirring occasionally to prevent sticking.",
+      "Once cooked, stir in the fresh spinach and cook for another 2-3 minutes until it has wilted into the curry.",
+      "Taste and adjust seasoning if necessary. Serve hot."
+    ],
+    "dietaryPreference": [
+      "vegan",
+      "vegetarian",
+      "gluten-free",
+      "dairy-free"
+    ],
+    "additionalInformation": {
+      "tips": "For a thicker curry, let it simmer with the lid off for the final 5-10 minutes. Ensure you use full-fat coconut milk for the creamiest result.",
+      "variations": "Add a can of chickpeas along with the lentils for extra protein and texture. For a bit of heat, add 1/2 teaspoon of red pepper flakes with the curry powder. Squeeze fresh lime juice over the final dish for a bright, acidic finish.",
+      "servingSuggestions": "Delicious served over basmati rice or quinoa. Garnish with fresh cilantro and a dollop of vegan yogurt or coconut cream.",
+      "nutritionalInformation": "This curry is a well-rounded meal, rich in plant-based protein, dietary fiber, Vitamin A from the sweet potatoes, and iron from the lentils and spinach."
+    },
+    "imgLink": "https://source.unsplash.com/1024x1024/?Creamy%20Coconut%20Lentil%20and%20Sweet%20Potato%20Curry%20food",
+    "geminiPromptId": "generated",
+    "comments": [],
+    "tags": [],
+    "__v": 0,
+    "createdAt": "2025-07-30T00:22:44.449Z",
+    "updatedAt": "2025-07-30T00:22:44.449Z"
+  }
+]

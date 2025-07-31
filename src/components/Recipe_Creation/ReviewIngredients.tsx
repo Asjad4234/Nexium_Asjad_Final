@@ -140,10 +140,10 @@ const ReviewComponent = ({
             {/* Create Recipes Button */}
             <Button
               onClick={onSubmit}
-              className={`flex items-center justify-center bg-brand-600 text-white
+              className={`flex items-center justify-center bg-orange-500 text-white
                 px-2 py-2 sm:px-4 sm:py-2
                 rounded-full transition duration-300 ease-in-out transform
-                hover:bg-brand-700 hover:shadow-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-500
+                hover:bg-orange-600 hover:shadow-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500
                 ${ingredients.length < 3 || generatedRecipes.length
                 ? 'cursor-not-allowed opacity-50'
                 : ''

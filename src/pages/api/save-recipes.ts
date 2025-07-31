@@ -5,6 +5,7 @@ import { apiMiddleware } from '../../lib/apiMiddleware';
 import { connectDB } from '../../lib/mongodb';
 import recipe from '../../models/recipe';
 import { Recipe, UploadReturnType, ExtendedRecipe } from '../../types';
+import { getRecipeImage } from '../../lib/pexels';
 
 // S3 helper function removed - images now handled by n8n workflow
 
@@ -22,18 +23,27 @@ const handler = async (req: NextApiRequest, res: NextApiResponse, session: any) 
         // Recipes already have images from n8n workflow
         console.info('Recipes already contain images from n8n workflow...');
         
-        // Use the image that's already in the recipe
-        const getImageLink = (recipe: any) => {
-            return recipe.imgLink || '/logo.svg';
+        // Use the image that's already in the recipe, or fetch from Pexels if missing
+        const getImageLink = async (recipe: any) => {
+            if (recipe.imgLink && !recipe.imgLink.includes('unsplash.com')) {
+                return recipe.imgLink;
+            }
+            // If no image or Unsplash image, fetch from Pexels
+            try {
+                return await getRecipeImage(recipe.name);
+            } catch (error) {
+                console.error('Failed to fetch Pexels image for recipe:', recipe.name, error);
+                return '/logo.svg';
+            }
         };
 
-        // Update recipe data with owner information
-        const updatedRecipes = recipes.map((r: any) => ({
+        // Update recipe data with owner information and ensure Pexels images
+        const updatedRecipes = await Promise.all(recipes.map(async (r: any) => ({
             ...r,
             owner: new mongoose.Types.ObjectId(session.user.id),
-            imgLink: getImageLink(r),
+            imgLink: await getImageLink(r),
             geminiPromptId: r.geminiPromptId.split('-')[0] // Remove client key iteration
-        }));
+        })));
 
         // Connect to MongoDB and save recipes
         await connectDB();
