@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # 🍳 Smart Recipe Generator
 
 A modern, AI-powered recipe generation application built with Next.js, OpenAI GPT-3.5, and n8n workflows. Create delicious recipes from ingredients and get cooking assistance through an intelligent chatbot.
@@ -131,47 +129,12 @@ node test-n8n-online.js
 - **Railway**: Full-stack deployment
 - **DigitalOcean App Platform**: Scalable deployment
 
-## 📊 Usage Statistics
-
-### OpenAI API Usage (Free Tier)
-- **Recipe Generation**: ~$0.001 per recipe
-- **Chat Messages**: ~$0.0005 per message
-- **$5 Credit**: ~5,000 recipes or 10,000 chat messages
 
 ### Performance
 - **Recipe Generation**: 2-5 seconds
 - **Chat Response**: 1-3 seconds
 - **Image Loading**: Instant (Pexels CDN)
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **OpenAI** for GPT-3.5-turbo API
-- **n8n** for workflow automation
-- **Pexels** for free food images
-- **Next.js** for the amazing framework
-- **Tailwind CSS** for beautiful styling
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/Asjad4234/Nexium_Asjad_GrandProject/issues)
-- **Documentation**: Check the `docs/` folder
-- **N8N Setup**: See `docs/n8n-setup.md`
-
----
-
-**Made with ❤️ by Asjad** | **Powered by AI** 🤖
-=======
-# Nexium_Asjad_GrandProject
->>>>>>> 55d745f5068078e0c31b0f7bb401f52bde224ec8
