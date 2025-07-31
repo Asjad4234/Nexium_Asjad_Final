@@ -36,8 +36,15 @@ export const staticRecipes: ExtendedRecipe[] = [
             nutritionalInformation: 'High in protein, low in carbs, rich in flavor'
         },
         openaiPromptId: 'thai-basil-chicken',
-        createdAt: new Date('2024-01-15'),
-        updatedAt: new Date('2024-01-15')
+        imgLink: '',
+        owner: {
+            _id: 'static-user-1',
+            name: 'Chef Demo'
+        },
+        owns: false,
+        tags: [],
+        createdAt: '2024-01-15T00:00:00.000Z',
+        updatedAt: '2024-01-15T00:00:00.000Z'
     },
     {
         _id: '2',
@@ -74,8 +81,15 @@ export const staticRecipes: ExtendedRecipe[] = [
             nutritionalInformation: 'High in fiber, protein, and healthy fats'
         },
         openaiPromptId: 'mediterranean-quinoa-bowl',
-        createdAt: new Date('2024-01-16'),
-        updatedAt: new Date('2024-01-16')
+        imgLink: '',
+        owner: {
+            _id: 'static-user-1',
+            name: 'Chef Demo'
+        },
+        owns: false,
+        tags: [],
+        createdAt: '2024-01-16T00:00:00.000Z',
+        updatedAt: '2024-01-16T00:00:00.000Z'
     },
     {
         _id: '3',
@@ -112,8 +126,15 @@ export const staticRecipes: ExtendedRecipe[] = [
             nutritionalInformation: 'Rich in protein and healthy fats'
         },
         openaiPromptId: 'pasta-carbonara',
-        createdAt: new Date('2024-01-17'),
-        updatedAt: new Date('2024-01-17')
+        imgLink: '',
+        owner: {
+            _id: 'static-user-1',
+            name: 'Chef Demo'
+        },
+        owns: false,
+        tags: [],
+        createdAt: '2024-01-17T00:00:00.000Z',
+        updatedAt: '2024-01-17T00:00:00.000Z'
     },
     {
         _id: '4',
@@ -151,8 +172,15 @@ export const staticRecipes: ExtendedRecipe[] = [
             nutritionalInformation: 'High in protein and vegetables, low in calories'
         },
         openaiPromptId: 'asian-stir-fry',
-        createdAt: new Date('2024-01-18'),
-        updatedAt: new Date('2024-01-18')
+        imgLink: '',
+        owner: {
+            _id: 'static-user-1',
+            name: 'Chef Demo'
+        },
+        owns: false,
+        tags: [],
+        createdAt: '2024-01-18T00:00:00.000Z',
+        updatedAt: '2024-01-18T00:00:00.000Z'
     },
     {
         _id: '5',
@@ -190,8 +218,15 @@ export const staticRecipes: ExtendedRecipe[] = [
             nutritionalInformation: 'High in fiber, protein, and healthy fats'
         },
         openaiPromptId: 'coconut-lentil-curry',
-        createdAt: new Date('2024-01-19'),
-        updatedAt: new Date('2024-01-19')
+        imgLink: '',
+        owner: {
+            _id: 'static-user-1',
+            name: 'Chef Demo'
+        },
+        owns: false,
+        tags: [],
+        createdAt: '2024-01-19T00:00:00.000Z',
+        updatedAt: '2024-01-19T00:00:00.000Z'
     },
     {
         _id: '6',
@@ -227,8 +262,15 @@ export const staticRecipes: ExtendedRecipe[] = [
             nutritionalInformation: 'Moderate calories, good source of protein'
         },
         openaiPromptId: 'margherita-pizza',
-        createdAt: new Date('2024-01-20'),
-        updatedAt: new Date('2024-01-20')
+        imgLink: '',
+        owner: {
+            _id: 'static-user-1',
+            name: 'Chef Demo'
+        },
+        owns: false,
+        tags: [],
+        createdAt: '2024-01-20T00:00:00.000Z',
+        updatedAt: '2024-01-20T00:00:00.000Z'
     }
 ];
 
@@ -253,7 +295,7 @@ export const filterRecipesBySearch = (recipes: ExtendedRecipe[], query: string):
     const searchTerm = query.toLowerCase();
     return recipes.filter(recipe => 
         recipe.name.toLowerCase().includes(searchTerm) ||
-        recipe.description.toLowerCase().includes(searchTerm) ||
+        (recipe.description?.toLowerCase().includes(searchTerm) || false) ||
         recipe.ingredients.some(ing => ing.name.toLowerCase().includes(searchTerm)) ||
         recipe.dietaryPreference.some(pref => pref.toLowerCase().includes(searchTerm))
     );
@@ -267,6 +309,6 @@ export const filterRecipesByTag = (recipes: ExtendedRecipe[], tag: string): Exte
     return recipes.filter(recipe => 
         recipe.dietaryPreference.some(pref => pref.toLowerCase().includes(tagLower)) ||
         recipe.name.toLowerCase().includes(tagLower) ||
-        recipe.description.toLowerCase().includes(tagLower)
+        (recipe.description?.toLowerCase().includes(tagLower) || false)
     );
 }; 

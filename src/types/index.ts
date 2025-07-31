@@ -15,6 +15,9 @@ interface RecipeIngredient {
 }
 
 interface AdditionalInformation {
+    cookingTime?: string;
+    difficulty?: string;
+    servings?: string;
     tips: string;
     variations: string;
     servingSuggestions: string;
@@ -23,6 +26,7 @@ interface AdditionalInformation {
 
 export interface Recipe {
     name: string;
+    description?: string;
     ingredients: RecipeIngredient[];
     instructions: string[];
     dietaryPreference: string[];

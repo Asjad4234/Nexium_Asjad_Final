@@ -220,7 +220,7 @@ const Home = () => {
                     {/* End Message */}
                     {!loading && filteredRecipes.length > 0 && (
                         <div className="text-center mt-12">
-                            <p className="text-gray-500 text-lg">You've seen all the amazing recipes!</p>
+                            <p className="text-gray-500 text-lg">You&apos;ve seen all the amazing recipes!</p>
                         </div>
                     )}
 
